@@ -32,7 +32,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2123767634383915"
         crossOrigin="anonymous"
       ></script>
-       <script defer data-domain="photomaker.co" src="https://app.pageview.app/js/script.js"></script>
+       <script defer data-domain="mcpworks.com" src="https://app.pageview.app/js/script.js"></script>
     </>
   );
 }
