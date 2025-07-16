@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface Props {
   query?: string;
@@ -37,6 +38,7 @@ export default ({ query }: Props) => {
       console.log("query url", url);
       await router.push(url);
       setInputDisabled(true); // Disable input after navigation
+      setTimeout(() => setInputDisabled(false), 500); // Re-enable after 500ms
     } catch (e) {
       console.log("search failed: ", e);
       setInputDisabled(false);
@@ -49,6 +51,10 @@ export default ({ query }: Props) => {
       setInputDisabled(false);
     }
   }, [query]);
+
+  useEffect(() => {
+    setInputDisabled(false);
+  }, [typeof window !== "undefined" ? window.location.search : ""]);
 
   return (
     <section className="relative mt-4 md:mt-8">
