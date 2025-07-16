@@ -23,7 +23,7 @@ export default async function ({
   } else {
     projects = await getFeaturedProjects(1, 100);
   }
-
+  console.log(projects);
   const projectsCount = await getProjectsCount();
 
   return (
